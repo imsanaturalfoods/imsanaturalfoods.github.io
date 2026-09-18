@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ismail Foods | Natural & Quality Foods</title>
+<meta name="description" content="Ismail Foods — Honey Nuts, Natural Honey, Ghee, Mustard Oil, Dry Fruits, Fruit Chips & Natural Powders.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+:root{
+  --green:#315c3b; --deep:#173622; --gold:#e5b94d; --cream:#fff9ed;
+  --yellow:#f6e4a5; --brown:#704d28; --text:#263229; --muted:#6d766f;
+  --white:#fff; --shadow:0 14px 40px rgba(40,58,44,.10); --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Hind Siliguri',sans-serif;color:var(--text);background:#fbfaf5;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #eee}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font-family:'Playfair Display',serif;font-size:29px;color:var(--green);font-weight:700}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:22px;font-weight:600}
+nav a:hover{color:var(--green)}
+.menu{display:none;background:none;border:0;font-size:28px}
+.hero{background:linear-gradient(135deg,#fff8df 0%,#f2f7ee 100%);padding:76px 0 64px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px}
+.badge{display:inline-block;background:#e6f0df;color:var(--green);padding:7px 15px;border-radius:99px;font-weight:700;margin-bottom:18px}
+h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,74px);line-height:1.05;color:var(--deep);margin-bottom:20px}
+.hero p{font-size:19px;color:var(--muted);max-width:600px}
+.btn{display:inline-block;margin-top:26px;background:var(--green);color:#fff;padding:13px 22px;border-radius:13px;font-weight:700}
+.btn.alt{background:#fff;color:var(--green);border:1px solid #d9e3d4;margin-left:8px}
+.hero-art{min-height:410px;display:flex;align-items:center;justify-content:center}
+.jar-scene{width:min(410px,90vw);height:370px;position:relative}
+.sun{position:absolute;width:290px;height:290px;border-radius:50%;background:#f3df91;right:10px;top:20px;opacity:.75}
+.jar{position:absolute;width:230px;height:185px;background:#fff;border-radius:28px 28px 45px 45px;bottom:30px;left:82px;box-shadow:0 20px 40px rgba(50,60,40,.18);border:7px solid #f4f1df}
+.lid{position:absolute;width:246px;height:38px;background:#e8e4ce;border-radius:14px;left:74px;bottom:202px;box-shadow:0 8px 10px rgba(0,0,0,.08)}
+.label{position:absolute;background:#f5d86f;width:180px;height:112px;left:107px;bottom:64px;border-radius:15px;text-align:center;padding:9px;color:#624619;border:2px solid #e8bd43}
+.label strong{display:block;font-family:'Playfair Display',serif;font-size:20px}
+.label b{font-size:19px;display:block}
+.label small{font-weight:700}
+.spoon{position:absolute;right:12px;bottom:85px;width:120px;height:16px;background:#d8c8a4;transform:rotate(-26deg);border-radius:99px}
+.spoon:before{content:"";position:absolute;left:-28px;top:-15px;width:42px;height:42px;background:#d8c8a4;border-radius:50%}
+.honey-drop{position:absolute;right:108px;top:98px;width:24px;height:58px;background:#dcae2e;border-radius:50% 50% 60% 60%;transform:rotate(12deg)}
+.section{padding:72px 0}
+.section-head{text-align:center;margin-bottom:34px}
+.section-head h2{font-family:'Playfair Display',serif;font-size:39px;color:var(--deep)}
+.section-head p{color:var(--muted);max-width:700px;margin:7px auto}
+.filters{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
+.filter{border:1px solid #dfe5da;background:#fff;padding:9px 16px;border-radius:99px;cursor:pointer;font-family:inherit;font-weight:600}
+.filter.active,.filter:hover{background:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid #eef0e9;transition:.2s}
+.card:hover{transform:translateY(-4px)}
+.photo{height:210px;background:#f4f0df;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.card-body{padding:18px}
+.tag{font-size:12px;color:var(--green);font-weight:700;background:#edf4e9;display:inline-block;padding:4px 9px;border-radius:99px}
+.card h3{font-size:21px;margin:9px 0 4px;color:var(--deep)}
+.card p{font-size:14px;color:var(--muted);min-height:44px}
+.price{font-size:20px;color:var(--brown);font-weight:700;margin-top:9px}
+.sizes{font-size:13px;color:#6d766f;margin-top:4px}
+.about{background:#eef5e9}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about-box{background:#fff;padding:30px;border-radius:24px;box-shadow:var(--shadow)}
+.about h2{font-family:'Playfair Display',serif;font-size:40px;color:var(--deep)}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}
+.check{padding:13px;background:#f8fbf6;border-radius:14px;font-weight:600}
+.honey-box{background:linear-gradient(135deg,#fff1b8,#f7d968);padding:35px;border-radius:28px;text-align:center}
+.honey-box h3{font-family:'Playfair Display',serif;font-size:34px;color:#694716}
+.wholesale{background:#fff}
+.table-wrap{overflow-x:auto;border-radius:20px;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:700px}
+th,td{padding:15px;border-bottom:1px solid #eee;text-align:left}
+th{background:#edf4e9;color:var(--green)}
+.note{margin-top:15px;color:var(--muted);font-size:14px}
+.contact{background:var(--deep);color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.contact h2{font-family:'Playfair Display',serif;font-size:42px}
+.contact p{color:#d7e0d8}
+.contact-card{background:#fff;color:var(--text);padding:25px;border-radius:20px}
+.contact-card input,.contact-card textarea{width:100%;padding:12px;margin:6px 0 10px;border:1px solid #ddd;border-radius:10px;font-family:inherit}
+footer{background:#102719;color:#cbd7cc;padding:24px 0;text-align:center}
+.hidden{display:none!important}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-art{order:-1}.hero{text-align:center}.hero p{margin:auto}nav{display:none}.menu{display:block}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.section{padding:54px 0}.checks{grid-template-columns:1fr}.btn.alt{margin-left:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#">Ismail <span>Foods</span></a>
+    <nav>
+      <a href="#products">Products</a><a href="#about">About</a><a href="#wholesale">Wholesale</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="menu" onclick="document.querySelector('nav').style.display=document.querySelector('nav').style.display==='flex'?'none':'flex'">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Natural • Quality • Homemade</span>
+      <h1>Good Food.<br>Good Mood.</h1>
+      <p>Ismail Foods-এর লক্ষ্য — ছোট প্যাকেটের সহজ, সুন্দর ও মানসম্মত খাবার থেকে শুরু করে ঘরোয়া মধু, ঘি, সরিষার তেল, ড্রাইফ্রুটস ও ফলের চিপস এক জায়গায় দেওয়া।</p>
+      <a class="btn" href="#products">পণ্য দেখুন</a>
+      <a class="btn alt" href="#wholesale">পাইকারি প্যাক</a>
+    </div>
+    <div class="hero-art">
+      <div class="jar-scene">
+        <div class="sun"></div><div class="honey-drop"></div>
+        <div class="lid"></div><div class="jar"></div>
+        <div class="label"><strong>Sweet Nuts</strong><b>মিনি হানি নাটস</b><small>Health • Natural • Crunchy</small></div>
+        <div class="spoon"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="products">
+<div class="container">
+  <div class="section-head"><h2>Our Products</h2><p>Ismail Foods-এর বর্তমান পণ্যসমূহ — পরে সহজেই নতুন পণ্য যোগ করা যাবে।</p></div>
+  <div class="filters">
+    <button class="filter active" data-filter="all">সব</button>
+    <button class="filter" data-filter="nuts">Honey Nuts</button>
+    <button class="filter" data-filter="honey">Honey</button>
+    <button class="filter" data-filter="oil">Oil & Ghee</button>
+    <button class="filter" data-filter="dry">Dry Fruits</button>
+    <button class="filter" data-filter="chips">Fruit Chips</button>
+    <button class="filter" data-filter="powder">Natural Powder</button>
+  </div>
+  <div class="grid" id="productGrid">
+
+    <article class="card" data-cat="nuts"><div class="photo"><img src="https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&w=900&q=85" alt="Mixed nuts"></div><div class="card-body"><span class="tag">Best Seller</span><h3>মিনি হানি নাটস</h3><p>কাঠবাদাম, কাজু, চিনাবাদাম, বীজ, কিসমিস, খেজুর, আখরোট, আলুবোখারা ও প্রাকৃতিক মধুর মিক্স।</p><div class="price">৳20 / 25g</div><div class="sizes">50g • 100g • 250g • 500g</div></div></article>
+
+    <article class="card" data-cat="honey"><div class="photo"><img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=900&q=85" alt="Natural honey"></div><div class="card-body"><span class="tag">Natural</span><h3>Natural Honey</h3><p>পরিষ্কার ও সুন্দর বোতলজাত প্রাকৃতিক মধু।</p><div class="price">৳250 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="oil"><div class="photo"><img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=85" alt="Ghee"></div><div class="card-body"><span class="tag">Homemade</span><h3>খাঁটি ঘি</h3><p>নিজস্বভাবে তৈরি, রান্না ও পরিবেশনের জন্য।</p><div class="price">৳300 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="oil"><div class="photo"><img src="https://images.unsplash.com/photo-1606850780554-bd3d1f2f4b48?auto=format&fit=crop&w=900&q=85" alt="Mustard oil"></div><div class="card-body"><span class="tag">Cold Pressed Style</span><h3>সরিষার তেল</h3><p>দৈনন্দিন রান্নার জন্য সরিষার তেল।</p><div class="price">৳220 / 1L</div><div class="sizes">1L • 2L • 5L</div></div></article>
+
+    <article class="card" data-cat="dry"><div class="photo"><img src="https://images.unsplash.com/photo-1599599810694-b5ac5b3a8f34?auto=format&fit=crop&w=900&q=85" alt="Almonds"></div><div class="card-body"><span class="tag">Single Item</span><h3>কাঠবাদাম</h3><p>মিক্স নয় — আলাদা ড্রাইফ্রুট প্যাক।</p><div class="price">৳950 / 500g</div><div class="sizes">500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="dry"><div class="photo"><img src="https://images.unsplash.com/photo-1574570124809-9c4f3d4d7f55?auto=format&fit=crop&w=900&q=85" alt="Cashews"></div><div class="card-body"><span class="tag">Single Item</span><h3>কাজুবাদাম</h3><p>প্রিমিয়াম আলাদা প্যাক।</p><div class="price">৳1,300 / 500g</div><div class="sizes">500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="dry"><div class="photo"><img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=900&q=85" alt="Raisins and dried fruit"></div><div class="card-body"><span class="tag">Single Item</span><h3>কিসমিস</h3><p>গোল্ডেন ও ব্ল্যাক কিসমিস আলাদা প্যাক।</p><div class="price">৳450 / 500g</div><div class="sizes">500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="dry"><div class="photo"><img src="https://images.unsplash.com/photo-1601379329542-31c59347e2a3?auto=format&fit=crop&w=900&q=85" alt="Dates"></div><div class="card-body"><span class="tag">Single Item</span><h3>খেজুর</h3><p>বিভিন্ন মান ও জাত অনুযায়ী প্যাক।</p><div class="price">৳340 / 500g</div><div class="sizes">500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="chips"><div class="photo"><img src="https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=900&q=85" alt="Banana chips"></div><div class="card-body"><span class="tag">Fruit Chips</span><h3>কলা চিপস</h3><p>ক্রিসপি ফলের স্ন্যাক — ছোট ও বড় প্যাক।</p><div class="price">৳80 / 50g</div><div class="sizes">50g • 100g • 250g</div></div></article>
+
+    <article class="card" data-cat="chips"><div class="photo"><img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=900&q=85" alt="Mango"></div><div class="card-body"><span class="tag">Fruit Chips</span><h3>আম চিপস</h3><p>ফলের স্বাদ ধরে রাখা ক্রিসপি স্ন্যাক।</p><div class="price">৳100 / 50g</div><div class="sizes">50g • 100g • 250g</div></div></article>
+
+    <article class="card" data-cat="chips"><div class="photo"><img src="https://images.unsplash.com/photo-1587334206596-c0f9f2c6f5d8?auto=format&fit=crop&w=900&q=85" alt="Pineapple"></div><div class="card-body"><span class="tag">Fruit Chips</span><h3>আনারস চিপস</h3><p>মিষ্টি-টক ফ্লেভারের ড্রাই স্ন্যাক।</p><div class="price">৳110 / 50g</div><div class="sizes">50g • 100g • 250g</div></div></article>
+
+    <article class="card" data-cat="chips"><div class="photo"><img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=900&q=85" alt="Carrot"></div><div class="card-body"><span class="tag">Vegetable Chips</span><h3>গাজর চিপস</h3><p>হালকা ও ক্রাঞ্চি ভেজিটেবল স্ন্যাক।</p><div class="price">৳90 / 50g</div><div class="sizes">50g • 100g • 250g</div></div></article>
+
+    <article class="card" data-cat="chips"><div class="photo"><img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=85" alt="Dragon fruit"></div><div class="card-body"><span class="tag">Fruit Chips</span><h3>ড্রাগন ফ্রুট চিপস</h3><p>নতুন ধরনের ফলের স্ন্যাক।</p><div class="price">৳150 / 50g</div><div class="sizes">50g • 100g • 250g</div></div></article>
+
+    <article class="card" data-cat="powder"><div class="photo"><img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=85" alt="Mushroom powder"></div><div class="card-body"><span class="tag">Natural Powder</span><h3>মাশরুম গুঁড়া</h3><p>শুকনো মাশরুম থেকে প্রস্তুত করার জন্য পরিকল্পিত পণ্য।</p><div class="price">৳350 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="powder"><div class="photo"><img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=900&q=85" alt="Banana powder"></div><div class="card-body"><span class="tag">Natural Powder</span><h3>কলা গুঁড়া</h3><p>প্রসেসিং ও রান্নায় ব্যবহারের জন্য।</p><div class="price">৳220 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="powder"><div class="photo"><img src="https://images.unsplash.com/photo-1599909533730-f9d6f5b7b3c1?auto=format&fit=crop&w=900&q=85" alt="Ginger powder"></div><div class="card-body"><span class="tag">Natural Powder</span><h3>আদা গুঁড়া</h3><p>ঘরোয়া রান্নার জন্য শুকনো আদার গুঁড়া।</p><div class="price">৳250 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="powder"><div class="photo"><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85" alt="Mango powder"></div><div class="card-body"><span class="tag">Natural Powder</span><h3>আমের গুঁড়া</h3><p>ফলভিত্তিক প্রাকৃতিক পাউডার।</p><div class="price">৳280 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="powder"><div class="photo"><img src="https://images.unsplash.com/photo-1615485737651-9d9c8a6f1c4d?auto=format&fit=crop&w=900&q=85" alt="Moringa"></div><div class="card-body"><span class="tag">Natural Powder</span><h3>সজনে গুঁড়া</h3><p>শুকনো সজনে পাতার গুঁড়া।</p><div class="price">৳300 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+    <article class="card" data-cat="powder"><div class="photo"><img src="https://images.unsplash.com/photo-1598514982901-ae627a7d9c2d?auto=format&fit=crop&w=900&q=85" alt="Tamarind-like dried fruit"></div><div class="card-body"><span class="tag">Special</span><h3>বড়ই গুঁড়া</h3><p>Ismail Foods-এর আলাদা একটি ইন্টারেস্টিং ফলের পাউডার।</p><div class="price">৳280 / 250g</div><div class="sizes">250g • 500g • 1kg</div></div></article>
+
+  </div>
+</div>
+</section>
+
+<section class="section about" id="about">
+<div class="container about-grid">
+  <div><h2>Ismail Foods</h2><p style="margin-top:12px;font-size:18px">ছোট প্যাকের সুন্দর ব্র্যান্ড থেকে ধীরে ধীরে একটি পূর্ণাঙ্গ natural food brand তৈরি করার পরিকল্পনা।</p>
+  <div class="checks"><div class="check">✓ Clean Packaging</div><div class="check">✓ Small & Family Packs</div><div class="check">✓ Retail & Wholesale</div><div class="check">✓ New Products Coming</div></div></div>
+  <div class="honey-box"><h3>Good Food<br>Good Mood</h3><p>with natural honey</p><div style="font-size:42px;margin-top:12px">🍯🥜</div></div>
+</div>
+</section>
+
+<section class="section wholesale" id="wholesale">
+<div class="container">
+<div class="section-head"><h2>Wholesale Packs</h2><p>মিনি হানি নাটসের জন্য আলাদা ২০-ডিবি ও ৫০-ডিবির বক্স পরিকল্পনা।</p></div>
+<div class="table-wrap"><table>
+<thead><tr><th>Pack</th><th>Retail Reference</th><th>Suggested Wholesale</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>20 × 25g</td><td>৳400</td><td>৳350–৳360</td><td>ছোট দোকান / ট্রায়াল</td></tr>
+<tr><td>50 × 25g</td><td>৳1,000</td><td>৳850–৳900</td><td>দোকান / ডিলার</td></tr>
+<tr><td>20 × 50g</td><td>৳800</td><td>৳700–৳740</td><td>খুচরা বিক্রেতা</td></tr>
+<tr><td>50 × 50g</td><td>৳2,000</td><td>৳1,700–৳1,800</td><td>বড় অর্ডার</td></tr>
+</tbody></table></div>
+<p class="note">নোট: এগুলো প্রাথমিক প্রস্তাবিত বিক্রয়মূল্য; কাঁচামাল, প্যাকেট, স্টিকার, শ্রম, পরিবহন ও আপনার লাভের মার্জিন অনুযায়ী লঞ্চের আগে দাম ঠিক করবেন।</p>
+</div>
+</section>
+
+<section class="section contact" id="contact">
+<div class="container contact-grid">
+<div><h2>Order / Contact</h2><p style="margin-top:12px">আপনার ফোন, WhatsApp, Facebook Page ও ঠিকানা পরে এখানে বসিয়ে দিতে পারবেন।</p></div>
+<div class="contact-card">
+<input placeholder="আপনার নাম"><input placeholder="মোবাইল নম্বর"><textarea rows="4" placeholder="কোন পণ্য/কত প্যাক লাগবে?"></textarea>
+<button class="btn" style="border:0;cursor:pointer;margin-top:5px">Send Inquiry</button>
+</div>
+</div>
+</section>
+
+<footer><div class="container">© 2026 Ismail Foods — Natural & Quality Foods</div></footer>
+
+<script>
+const buttons=document.querySelectorAll('.filter');
+const cards=document.querySelectorAll('.card');
+buttons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    buttons.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+    const f=btn.dataset.filter;
+    cards.forEach(c=>c.classList.toggle('hidden',f!=='all' && c.dataset.cat!==f));
+  });
+});
+</script>
+</body>
+</html>
